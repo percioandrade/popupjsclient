@@ -1,6 +1,6 @@
 <?php
 
-namespace WHMCS\Module\Addon\PopupJSClient;
+namespace WHMCS\Module\Addon\popupjsclient;
 
 use Exception;
 use Illuminate\Database\Capsule\Manager as Capsule;

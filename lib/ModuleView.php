@@ -1,6 +1,6 @@
 <?php
 
-namespace WHMCS\Module\Addon\PopupJSClient;
+namespace WHMCS\Module\Addon\popupjsclient;
 
 class ModuleView {
     public static function renderForm($lang, $data = []) {

@@ -1,16 +1,16 @@
 <?php
 
-namespace WHMCS\Module\Addon\PopupJSClient;
+namespace WHMCS\Module\Addon\popupjsclient;
 
 use Exception;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use WHMCS\Module\Addon\PopupJSClient\ModuleView as AnnouncementView;
-use WHMCS\Module\Addon\PopupJSClient\Model as Announcement;
+use WHMCS\Module\Addon\popupjsclient\ModuleView as AnnouncementView;
+use WHMCS\Module\Addon\popupjsclient\Model as Announcement;
 class ModuleController {
     public static function config(): array
     {
         return [
-            'name' => 'Extended PopUpJSClient',
+            'name' => 'Extended popupjsclient',
             'description' => 'Display a modal dynamically based on the type in the WHMCS client area.',
             'version' => '1.0',
             'author' => 'Percio Andrade',
@@ -113,10 +113,8 @@ class ModuleController {
     }
 
     public static function getLang($vars) {
-        $language = $_SESSION['Language'] ?? 'en';
+        $language = $GLOBALS['CONFIG']['Language'] ?? 'en';
         $langFile = __DIR__ . '/../resources/lang/' . $language . '.php';
-
-        var_dump($language);
 
         if (file_exists($langFile)) {
             return include $langFile;

@@ -1,7 +1,7 @@
 <?php
 
-use WHMCS\Module\Addon\PopupJSClient\ModuleController as AnnouncementController;
-use WHMCS\Module\Addon\PopupJSClient\Model as Announcement;
+use WHMCS\Module\Addon\popupjsclient\ModuleController as AnnouncementController;
+use WHMCS\Module\Addon\popupjsclient\Model as Announcement;
 
 if (!defined("WHMCS")) {
     die("This file cannot be accessed directly");
@@ -33,52 +33,47 @@ function ClientAreaFooterOutput_ModuleView($vars)
 
         echo "
         <style>
-            .areaModal {
-                -webkit-box-align: center;
-                align-items: center;
-                background-color: rgba(74, 74, 74, 0.8);
-                display: flex;
-                height: 100vh;
-                min-height: 40vh;
-                -webkit-box-pack: center;
-                justify-content: center;
-                left: 0px;
-                position: fixed;
-                top: 0px;
-                width: 100vw;
-                z-index: 999;
-            }
-    
-            .areaModal {
-                position: fixed;
-                top: -100%; /* Inicialmente fora da tela, acima */
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background-color: rgba(0, 0, 0, 0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-                transition: top 0.5s ease; /* Transição suave ao deslizar */
-            }
+        .areaModal {
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: rgba(74, 74, 74, 0.8);
+            display: flex;
+            height: 100vh;
+            min-height: 40vh;
+            -webkit-box-pack: center;
+            justify-content: center;
+            left: 0px;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            z-index: 999;
+        }
 
-            .areaModal.show {
-                top: 0; /* Move para a posição original */
-            }
-                
-            .areaModalButton {
-                position: absolute;
-                right: 0;
-                margin: 10px;
-                top: -5px;
-                background: #e2f4fb;
-                padding: 1px 15px;
-                font-size: 14px;
-                color: #235498;
-                font-weight: bold;
-                font-family: 'Plus Jakarta Sans';
-            }
+        .areaModalVal {
+            background-color: rgb(255, 255, 255);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            max-height: 440px;
+            max-width: 800px;
+            min-height: 100px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .areaModalButton {
+            position: absolute;
+            right: 0;
+            margin: 10px;
+            top: -5px;
+            background: #e2f4fb;
+            padding: 1px 15px;
+            font-size: 14px;
+            color: #235498;
+            font-weight: bold;
+            font-family: 'Plus Jakarta Sans';
+        }
         </style>
         
         <script>
