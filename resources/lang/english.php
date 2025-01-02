@@ -18,7 +18,7 @@ return [
     'url' => 'Inform URL',
     'priority' => 'Priority (1-5, 1 is highest)',
     'add_announcement' => 'Add Announcement',
-    'edit_announcement' => 'Edit Announcement',
+    'edit_announcement' => 'Updated Announcement',
     'existing_announcements' => 'Existing Announcements',
     'created_at' => 'Created at: ',
     'expires_at' => 'Expires at: ',
@@ -28,5 +28,6 @@ return [
     'delete' => 'Delete',
     'announcement' => 'Announcement',
     'close' => 'Close',
-    'interaction_link' => 'no longer display today'
+    'interaction_link' => 'no longer display today',
+    'see_more' => 'See more'
 ];

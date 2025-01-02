@@ -30,6 +30,7 @@ function ClientAreaFooterOutput_ModuleView($vars)
         $announcementId = (int)$announcement->id;
         $isMultimedia = $announcement->is_multimedia ? 'true' : 'false';
         $url = htmlspecialchars($announcement->url, ENT_QUOTES, 'UTF-8');
+        $seeMore = htmlspecialchars($lang['see_more'], ENT_QUOTES, 'UTF-8');
 
         echo "
         <style>
@@ -74,6 +75,10 @@ function ClientAreaFooterOutput_ModuleView($vars)
             font-weight: bold;
             font-family: 'Plus Jakarta Sans';
         }
+
+        .modalcontent {
+            background: #f1f1f1;
+        }
         </style>
         
         <script>
@@ -83,6 +88,7 @@ function ClientAreaFooterOutput_ModuleView($vars)
                     isMultimedia: $isMultimedia,
                     url: '$url',
                     text: " . json_encode($announcementText) . ",
+                    seeMore: '$seeMore',
                     interactionLink: '$interactionLink'
                 };
 
@@ -101,8 +107,8 @@ function ClientAreaFooterOutput_ModuleView($vars)
                             '<div id=\"areaModalVal\" class=\"areaModalVal\">' +
                                 (announcementData.isMultimedia 
                                     ? '<a href=\"' + announcementData.url + '\" target=\"_blank\"><img src=\"' + announcementData.text + '\" alt=\"Announcement\" /></a>' 
-                                    : '<div>' + parseAndSanitizeHTML(announcementData.text) + '</div>') +
-                                '<a href=\"#\" class=\"areaModalButton\" onclick=\"dismissAnnouncement(' + announcementData.id + '); return false;\">' + announcementData.interactionLink + '</a>' +
+                                    : '<div class=\"p-5\"><span class=\"badge badge-info\">Info</span><div class=\"modalcontent mt-5 p-2 rounded\">' + parseAndSanitizeHTML(announcementData.text) + '</div><div class=\"linkmodalContent mt-5\"><a href=\"' + announcementData.url + '\" class=\"p-1 btn-primary rounded\" target=\"_blank\">' + announcementData.seeMore +'</a></div></div>') +
+                                    '<a href=\"#\" class=\"areaModalButton\" onclick=\"dismissAnnouncement(' + announcementData.id + '); return false;\">' + announcementData.interactionLink + '</a>' +
                             '</div>' +
                         '</div>';
                     document.body.appendChild(popup);

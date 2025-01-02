@@ -20,12 +20,14 @@
   <li><strong>Language Improvement</strong>: The language check has been corrected to align with the WHMCS standard.</li>
   <li><strong>Enhanced Display</strong>: Modal display has been improved with new colors and effects.</li>
   <li><strong>Table Layout Update</strong>: Tables now follow the same structure and style as used in WHMCS.</li>
+  <li><strong>Custom URL</strong>: Set a custom URL for a image or text annouce. Best fit images in 800x600 example: https://placehold.co/800x600</li>
 </ul>
+
 
 <h2>Installation</h2>
 <ol>
   <li><strong>Clone the repository</strong>:
-    <pre><code>git clone https://github.com/rzatkv/popupjsclient.git</code></pre>
+    <pre><code>git clone https://github.com/percioandrade/popupjsclient</code></pre>
   </li>
   <li><strong>Upload files</strong>: Copy the contents of the <code>modules/addons/popupjsclient</code> directory to your WHMCS installation directory.</li>
   <li><strong>Activate the Add-on</strong>:
@@ -55,8 +57,10 @@
 |   |
 |-- resources
 |   |-- lang
-|   |   |-- en.php
-|   |   `-- fa.php
+|   |   |-- english.php
+|   |   `-- farsi.php
+|   |   `-- spanish.php
+|   |   `-- portuguese-br.php
 |-- popupjsclient.php
 |-- hooks.php
 </code></pre>
@@ -65,6 +69,8 @@
 <ul>
   <li><strong>Admin Interface</strong>: Use the WHMCS admin area to add/edit/delete announcements.</li>
   <li><strong>Client Area</strong>: Announcements are displayed as pop-ups for clients in the client area. Pop-ups appear based on the announcement's priority, user group, and validity period.</li>
+  <li><strong>Image</strong>: For a imagem simple set image url (example: https://placehold.co/800x600) and set content as multimedia and save.
+  <li><strong>Custom URL</strong>: For a custom URL set in URL text area</strong></li>
 </ul>
 
 <h2>Customization</h2>
@@ -87,8 +93,8 @@
 
 <h2>Contact</h2>
 <ul>
-  <li><strong>Author</strong>: Reza Karimi</li>
-  <li><strong>Email</strong>: <a href="mailto:rzatkv@icloud.com">rzatkv@icloud.com</a></li>
+  <li><strong>Author</strong>: Reza Karimi - <a href="mailto:rzatkv@icloud.com">rzatkv@icloud.com</a></li>
+  <li><strong>Changes</strong>: Percio Andrade - <a href="mailto:percio@zendev.com.br">percio@zendev.com.br</a></li>
 </ul>
 <p>If you have any questions or feedback, feel free to contact me! 😊</p>
 

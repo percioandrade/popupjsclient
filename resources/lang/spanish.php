@@ -18,7 +18,7 @@ return [
     'url' => 'Ingrese una URL',
     'priority' => 'Prioridad (1-5, 1 es la más alta)',
     'add_announcement' => 'Agregar Anuncio',
-    'edit_announcement' => 'Editar Anuncio',
+    'edit_announcement' => 'Actualizar Anuncio',
     'existing_announcements' => 'Anuncios Existentes',
     'created_at' => 'Creado en: ',
     'expires_at' => 'Expira en: ',
@@ -28,5 +28,6 @@ return [
     'delete' => 'Eliminar',
     'announcement' => 'Anuncio',
     'close' => 'Cerrar',
-    'interaction_link' => 'ya no se muestra hoy'
+    'interaction_link' => 'ya no se muestra hoy',
+    'see_more' => 'Ver más'
 ];
