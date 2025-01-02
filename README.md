@@ -1,4 +1,4 @@
-<h1>PopUpJSClient - Beautiful Pop-ups for WHMCS</h1>
+<h1>Extendend PopUpJSClient - Beautiful Pop-ups for WHMCS</h1>
 
 <p><strong>PopUpJSClient</strong> is a WHMCS add-on module that allows administrators to create and manage announcements easily, and display them as stylish pop-ups for users in the client area. The module features a user-friendly admin interface, supports multimedia announcements, and prioritizes the announcements to ensure the most important information reaches users first.</p>
 
@@ -11,6 +11,15 @@
   <li><strong>Expiration Dates</strong>: Set start and expiration dates to automate the visibility of announcements.</li>
   <li><strong>Multi-Language Support</strong>: The module supports both English and Persian languages for flexibility.</li>
   <li><strong>Responsive Design</strong>: Pop-ups are designed to look great on both desktop and mobile devices.</li>
+</ul>
+
+<h2>Updates</h2>
+<ul>
+  <li><strong>Content Type Detection</strong>: It is now possible to determine the type of content, whether it's an image or text.</li>
+  <li><strong>Dismiss for 24 Hours</strong>: The dismiss button now sets a cookie to keep the modal dismissed for the next 24 hours.</li>
+  <li><strong>Language Improvement</strong>: The language check has been corrected to align with the WHMCS standard.</li>
+  <li><strong>Enhanced Display</strong>: Modal display has been improved with new colors and effects.</li>
+  <li><strong>Table Layout Update</strong>: Tables now follow the same structure and style as used in WHMCS.</li>
 </ul>
 
 <h2>Installation</h2>

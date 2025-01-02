@@ -10,11 +10,11 @@ class ModuleController {
     public static function config(): array
     {
         return [
-            'name' => 'PopUpJSClient',
-            'description' => 'پاپ آپ های زیبا برای WHMCS',
-            'version' => '3.0',
-            'author' => 'Reza Karimi',
-            'author_email' => 'rzatkv@icloud.com',
+            'name' => 'Extended PopUpJSClient',
+            'description' => 'Display a modal dynamically based on the type in the WHMCS client area.',
+            'version' => '1.0',
+            'author' => 'Percio Andrade',
+            'author_email' => 'percio@zendev.com.br',
             'fields' => []
         ];
     }
@@ -22,7 +22,7 @@ class ModuleController {
     public static function activate(): array
     {
         try {
-            Capsule::schema()->create('rzatkv_popupjsclient_lists', function ($table) {
+            Capsule::schema()->create('tbl_popupjsclient_lists', function ($table) {
                 $table->increments('id');
                 $table->text('announcement');
                 $table->timestamp('start_at')->nullable();
@@ -31,6 +31,7 @@ class ModuleController {
                 $table->string('user_group')->nullable();
                 $table->integer('views')->default(0);
                 $table->boolean('is_multimedia')->default(false);
+                $table->text('url');
                 $table->integer('priority')->default(3);
             });
         } catch (Exception $e) {
@@ -42,7 +43,7 @@ class ModuleController {
     public static function deactivate(): array
     {
         try {
-            Capsule::schema()->dropIfExists('rzatkv_popupjsclient_lists');
+            Capsule::schema()->dropIfExists('tbl_popupjsclient_lists');
         } catch (Exception $e) {
             return ['status' => 'error', 'description' => 'Unable to drop table: ' . $e->getMessage()];
         }
@@ -62,6 +63,7 @@ class ModuleController {
                 'expires_at' => $_POST['expires_at'] ?? null,
                 'user_group' => $_POST['user_group'] ?? null,
                 'is_multimedia' => isset($_POST['is_multimedia']) ? 1 : 0,
+                'url' => $_POST['url'],
                 'priority' => $_POST['priority'] ?? 3
             ];
             if (!empty($data['announcement'])) {
@@ -82,6 +84,7 @@ class ModuleController {
                 'expires_at' => $_POST['expires_at'] ?? null,
                 'user_group' => $_POST['user_group'] ?? null,
                 'is_multimedia' => isset($_POST['is_multimedia']) ? 1 : 0,
+                'url' => $_POST['url'],
                 'priority' => $_POST['priority'] ?? 3
             ];
             if (!empty($data['announcement'])) {
@@ -110,8 +113,10 @@ class ModuleController {
     }
 
     public static function getLang($vars) {
-        $language = $vars['language'] ?? 'en';
+        $language = $_SESSION['Language'] ?? 'en';
         $langFile = __DIR__ . '/../resources/lang/' . $language . '.php';
+
+        var_dump($language);
 
         if (file_exists($langFile)) {
             return include $langFile;
